@@ -52,7 +52,7 @@ Error
 </Accordion.Root>
 ```
 
-Instead of **`AccordionTrigger`** it is **`Accordion.Trigger`** !
+Instead of **`AccordionTrigger`** it is **`Accordion.Trigger`** ! :skull:
 
 Correct
 
