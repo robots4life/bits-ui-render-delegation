@@ -241,6 +241,8 @@ const builder: any
 
 <img src="/static/Screenshot_20240914_155711.png">
 
+## Solution
+
 The solution is to pass the `builder` to the `slot` of the underlying `Button` component so that it can be accessed from the wrapping `PaginationPrimitive.PrevButton` component.
 
 <a target="_blank" href="/src/lib/components/ui/pagination/pagination-prev-button.svelte">/src/lib/components/ui/pagination/pagination-prev-button.svelte</a>
