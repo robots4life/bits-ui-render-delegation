@@ -198,6 +198,16 @@ The solution is to pass the `builder` to the `slot` of the underlying `Button` c
 
 <a target="_blank" href="/src/lib/components/ui/pagination/pagination-prev-button.svelte">/src/lib/components/ui/pagination/pagination-prev-button.svelte</a>
 
+<a target="_blank" href="https://svelte.dev/docs/special-elements#slot-slot-key-value">https://svelte.dev/docs/special-elements#slot-slot-key-value</a>
+
+You pass the slot template the property `builder` so that it can be used from the wrapping outer component.
+
+In this particular case the wrapping component is `PaginationPrimitive.PrevButton`.
+
+It uses a slot.
+
+Slots can also accept properties and `builder` is a property of the slot used in `Button`.
+
 **Before**
 
 ```svelte
@@ -247,3 +257,7 @@ The solution is to pass the `builder` to the `slot` of the underlying `Button` c
 	</Button>
 </PaginationPrimitive.PrevButton>
 ```
+
+Svelte `let:` directive examples with `slot`.
+
+<a target="_blank" href="https://svelte.dev/repl/4acaad8e0ae349078508a2929ea2a367?version=4.2.19">https://svelte.dev/repl/4acaad8e0ae349078508a2929ea2a367?version=4.2.19</a>
