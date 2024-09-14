@@ -52,6 +52,8 @@ Error
 </Accordion.Root>
 ```
 
+Instead of **`AccordionTrigger`** it is **`Accordion.Trigger`** !
+
 Correct
 
 ```svelte
@@ -157,6 +159,8 @@ pnpm dlx shadcn-svelte@latest add accordion
 │
 └  Success! Component installation completed.
 ```
+
+<a target="_blank" href="/src/routes/+page.svelte">/src/routes/+page.svelte</a>
 
 ```svelte
 <script lang="ts">
