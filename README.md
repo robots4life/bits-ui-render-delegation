@@ -6,23 +6,6 @@ Bits UI
 pnpm install bits-ui
 ```
 
-```svelte
-<script lang="ts">
-	import { Accordion } from 'bits-ui';
-</script>
-
-<Accordion.Root>
-	<Accordion.Item value="first">
-		<Accordion.Header>
-			<Accordion.Trigger asChild let:builder>
-				<div use:builder.action {...builder}>Open accordion item</div>
-			</Accordion.Trigger>
-		</Accordion.Header>
-		<Accordion.Content>First accordion content</Accordion.Content>
-	</Accordion.Item>
-</Accordion.Root>
-```
-
 Shadcn-Svelte
 
 ```
