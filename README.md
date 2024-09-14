@@ -116,6 +116,8 @@ pnpm dlx shadcn-svelte@latest add pagination
 
 ```
 
+<a target="_blank" href="https://www.bits-ui.com/docs/delegation">https://www.bits-ui.com/docs/delegation</a>
+
 Render Delegation with Bits UI `Pagination` works, however Render Delegation with Shadcn-Svelte `Pagination` does not work.
 
 <a target="_blank" href="/src/routes/+page.svelte">/src/routes/+page.svelte</a>
