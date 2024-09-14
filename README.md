@@ -240,3 +240,57 @@ const builder: any
 ```
 
 <img src="/static/Screenshot_20240914_155711.png">
+
+The solution is to pass the `builder` to the `slot` of the underlying `Button` component so that it can be accessed from the wrapping `PaginationPrimitive.PrevButton` component.
+
+<a target="_blank" href="/src/lib/components/ui/pagination/pagination-prev-button.svelte">/src/lib/components/ui/pagination/pagination-prev-button.svelte</a>
+
+**Before**
+
+```svelte
+<slot>
+	<ChevronLeft class="h-4 w-4" />
+	<span>Previous</span>
+</slot>
+```
+
+**After**
+
+```svelte
+<!-- The solution is to pass the builder to the slot of the underlying Button component so that it can be accessed from the wrapping PaginationPrimitive.PrevButton component -->
+<slot {builder}>
+	<ChevronLeft class="h-4 w-4" />
+	<span>Previous</span>
+</slot>
+```
+
+```svelte
+<script lang="ts">
+	import { Pagination as PaginationPrimitive } from 'bits-ui';
+	import ChevronLeft from 'lucide-svelte/icons/chevron-left';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { cn } from '$lib/utils.js';
+
+	type $$Props = PaginationPrimitive.PrevButtonProps;
+	type $$Events = PaginationPrimitive.PrevButtonEvents;
+
+	let className: $$Props['class'] = undefined;
+	export { className as class };
+</script>
+
+<PaginationPrimitive.PrevButton asChild let:builder>
+	<Button
+		variant="ghost"
+		class={cn('gap-1 pl-2.5', className)}
+		builders={[builder]}
+		on:click
+		{...$$restProps}
+	>
+		<!-- The solution is to pass the builder to the slot of the underlying Button component so that it can be accessed from the wrapping PaginationPrimitive.PrevButton component -->
+		<slot {builder}>
+			<ChevronLeft class="h-4 w-4" />
+			<span>Previous</span>
+		</slot>
+	</Button>
+</PaginationPrimitive.PrevButton>
+```
